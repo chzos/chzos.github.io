@@ -2,7 +2,7 @@
 title: Ryan Choi&#58; SEO & Digital Marketing Services in Vancouver BC
 layout: default
 current: home
-class: 'home-template'
+class: 'tag-template'
 navigation: True
 ---
 
@@ -13,61 +13,15 @@ into the {body} of the default.hbs template -->
 <!-- The big featured header, it uses blog cover image as a BG if available -->
 <header class="site-header outer {% if page.cover or site.cover %}" style="background-image:  url({{ site.baseurl }}{% if page.cover %}{{ page.cover }}{% elsif site.cover %}{{ site.cover }}{% endif %}) {% else %}no-cover{% endif %}">
   <div class="inner">
-      <div class="site-header-content">
-          <h1 class="site-title">
-              {% if site.logo %}
-                <img class="site-logo" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.title }}"/>
-                {% else %}
-                  {{ site.title }}
-              {% endif %}
-          </h1>
-          <h2 class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h2>
-      </div>
-  </div>
-  {% include site-nav.html %}
-</header>
-
-<!-- The main content area -->
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-      <div class="post-feed">
-          <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
-          {%  include post-card.html %}
-      </div>
-      <div>
-        <h3>Heading 3</h3>
-        <p>Ryan Choi: Canada SEO Hello, my name is Ryan Choi.
-I am a professional SEO with over 3 years of real-world experience working for some of Canada's most competitive internet marketing agencies including Coronation Internet Marketing, Canada West Internet Marketing, and EMethod.
-My client success, ranking for competitive keywords, is in today’s competitive markets. I am Google Analytics IQ Certified, and Google AdWords Certified.
-Custom Solutions for Clients
-If you are tired of dealing with over-promising SEOs, you have come to the right place. I provide a level of digital marketing and search-engine optimization experience and insight that is worth your time and investment.
-I put you and your business first and help you achieve your online business goals with clarity and expert insight.
-Client Testimonials
-Certifications & Courses
-Google Analytics Certified
-A professional Google accreditation that demonstrates proficiency in basic and advanced aspects of Google Analytics.
-Google AdWords Certified
-A professional Google accreditation that demonstrates proficiency in basic and advanced aspects of Google AdWords.
-OMG Machines Alchemy
-Course certification for completing one of the most successful internet marketing & SEO training courses on the internet today.
-Your Business Deserves an Expert!
-I primarily support local Canadian agencies who want to do better than their American counterparts, but I have also had great success in US markets as well. I have ranked over 50+ websites on the first page of major search engines for various industries including carpet cleaning, real-estate, digital marketing, finance and insurance agencies.
-
-I strongly believe that we are teachers sometimes, but a student always. As such, I strive to constantly grow both as a professional and personally as a lifelong nerd.
-Internet Marketing & SEO Services
-Complete Website Crawl & Audit
-I perform a full site crawl and SEO audit of your website for on-site and off-site factors.
-Competitive Keyword Research
-I perform competitive keyword research to identify missed opportunites for your website.
-Backlink Profile Analysis & Building
-I build and manage natural and diverse backlinks to your website as an integral part of SEO.
-Local Search Optimization
-I optimize your local search presence on major search engines' result pages.
-Paid Search Advertising
-I manage your paid search campaigns to mitigate costs and maximize effectiveness.
-Copywriting & Web Design
-I help build and create content and new designs for your digital web properties.</p>
-      </div>
-
+    {% include site-nav.html %}
+    <div class="site-header-content">
+      <h2 class="site-title">Modern SEO & Web Design Consulting Services</h2>
+      <p class="site-description">This website is being developed and re-designed by Ryan Choi.</p>
     </div>
-</main>
+  </div>
+  <!--
+  <div class="featured-clients">
+    <p></p>
+  </div>
+  -->
+</header>

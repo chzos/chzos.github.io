@@ -106,6 +106,7 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-header {
+    height: 100vh;
     position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -148,17 +149,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 10vw 4vw;
-    min-height: 200px;
-    max-height: 450px;
-    text-align: center;
+    height: calc(100vh - 4vw);
 }
 
 .site-title {
+    background-color: rgba(0,0,0,0.55);
     z-index: 10;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
     font-size: 3.8rem;
     font-weight: 700;
 }
@@ -168,9 +167,10 @@ body {
 }
 
 .site-description {
+    background-color: rgba(0,0,0,0.55);
     z-index: 10;
     margin: 0;
-    padding: 5px 0;
+    padding: 1rem;
     font-size: 2.2rem;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -199,6 +199,9 @@ body {
     overflow-y: hidden;
     height: 40px;
     font-size: 1.2rem;
+    background-color: rgba(0,0,0,0.55);
+    padding: 0 2vw;
+    border-radius: 33px;
 }
 
 .site-nav-left {
@@ -1856,10 +1859,10 @@ Usage (In Ghost editor):
 
 .site-footer {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 60px;
+    padding: 1vw;
     color: #fff;
     background: color(var(--darkgrey) l(-15%));
+    text-align: center;
 }
 
 .site-footer-content {
@@ -1912,4 +1915,33 @@ Usage (In Ghost editor):
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
+}
+
+.featured-clients {
+  background-color: rgba(0,0,0,0.55);
+  height: 4vw;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 150;
+}
+
+.featured-clients > p {
+  margin: auto;
+}
+
+.error-template > .site-main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  width: 100%;
 }

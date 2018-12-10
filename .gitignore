@@ -1,2 +1,6 @@
 .DS_Store
 Gemfile.lock
+package-lock.json
+node_modules/
+package-lock.json
+package-lock.json
