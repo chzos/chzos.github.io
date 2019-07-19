@@ -1,3 +1,6 @@
+## Jekyll
+When coding with liquid syntax, whitespace control tends to be an issue; therefore all liquid syntax should appear immediately after html tags, without newlines or whitespace.
+
 ## Jasper2
 
 [![Build Status](https://travis-ci.org/jekyller/jasper2.svg?branch=master)](https://travis-ci.org/jekyller/jasper2)

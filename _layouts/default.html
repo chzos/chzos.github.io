@@ -1,68 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    {% include dynamic_title.html %}
-    <title>{% if title %}{{ title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/syntax.css" />
-
-    <!--[if IE]>
-        <style>
-            p, ol, ul{
-                width: 100%;
-            }
-            blockquote{
-                width: 100%;
-            }
-        </style>
-    <![endif]-->
-
-    {% include head.html %}
-
+  {%- include head.html -%}
 </head>
 <body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %}">
+  {%- include google_js.html -%}
+  <div class="site-wrapper">
+    {{ content }}
 
-    <div class="site-wrapper">
-        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        {{ content }}
-
-        <!-- Previous/next page links - displayed on every page -->
-        {% if paginator.total_posts > site.paginate %}
-            {% if page.class == 'home-template' %}
-                {% include post_pagination.html %}
-            {% elsif page.class == 'page-template' %}
-                {% include post_pagination.html %}
-            {% elsif page.class == 'author-template' %}
-                {% include author_pagination.html %}
-            {% elsif page.class == 'tag-template' %}
-                {% include tag_pagination.html %}
-            {% else %}
-                {% include post_pagination.html %}
-            {% endif %}
-        {% endif %}
-
-        <!-- The footer at the very bottom of the screen -->
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright">Ryan Choi &copy; {{  site.time | date: '%Y' }}</section>
-            </div>
-        </footer>
-
-    </div>
-
-    {% if paginator.total_pages > site.paginate %}
-    <script>
-        var maxPages = parseInt('{{ paginator.total_pages }}');
-    </script>
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script>
+    <!-- Previous/next page links - displayed on every page -->
+    {% if paginator.total_posts > site.paginate %}
+    {% if page.class == 'home-template' %}
+    {% include post_pagination.html %}
+    {% elsif page.class == 'page-template' %}
+    {% include post_pagination.html %}
+    {% elsif page.class == 'author-template' %}
+    {% include author_pagination.html %}
+    {% elsif page.class == 'tag-template' %}
+    {% include tag_pagination.html %}
+    {% else %}
+    {% include post_pagination.html %}
     {% endif %}
+    {% endif %}
+
+    <!-- The footer at the very bottom of the screen -->
+    <footer class="site-footer outer">
+      <div class="site-footer-content inner">
+        <section class="copyright">Ryan Choi &copy; {{  site.time | date: '%Y' }}</section>
+      </div>
+    </footer>
+
+  </div>
+
+  {% if paginator.total_pages > site.paginate %}
+  <script>
+  var maxPages = parseInt('{{ paginator.total_pages }}');
+</script>
+<script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script>
+{% endif %}
 
 </body>
 </html>
