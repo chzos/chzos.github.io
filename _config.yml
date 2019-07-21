@@ -59,3 +59,5 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
+
+theme: jekyll-theme-cayman
