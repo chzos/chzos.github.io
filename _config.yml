@@ -9,8 +9,8 @@ title: Ryan Choi
 description: Professional digital marketing and search-engine optimization services.
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
-logo_dark: assets/images/favicon.png
-favicon: assets/images/favicon.png
+logo_dark: assets/images/favicon.ico
+favicon: assets/images/favicon.ico
 # Social info
 navigation: True # show the navbar links
 subscribers: True # you need to connect an external service for this to work,

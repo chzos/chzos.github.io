@@ -4,9 +4,9 @@
   <title>{% if title %}{{ title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
   <link rel="canonical" href="{{ site.url }}{% if site.baseurl %}{{ site.baseurl }}{% endif %}{{ page.url }}" />
-  <link rel="shortcut icon" href="{{ site.favicon }}" type="image/png" />
-  <link rel="stylesheet" type="text/css" href="assets/built/bootstrap-reboot.css" />
-  <link rel="stylesheet" type="text/css" href="assets/built/bootstrap-grid.css" />
+  <link rel="shortcut icon" href="{{ site.favicon }}" type="image/icon" />
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/built/styles.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/built/bootstrap.min.css" />
   <link rel="alternate" type="application/rss+xml" title="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" href="{{ site.baseurl }}feed.xml" />
   {% include google_js.html %}
   {% include social-cards.html %}
