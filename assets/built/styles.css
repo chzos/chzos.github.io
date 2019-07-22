@@ -31,3 +31,7 @@
 .bg-primary {
   background-image:linear-gradient(90deg, #00438b, #1dcaff);
 }
+
+.h-100 {
+  min-height:100%;
+}
