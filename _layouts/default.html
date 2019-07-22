@@ -1,68 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    {% include dynamic_title.html %}
-    <title>{% if title %}{{ title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/syntax.css" />
-
-    <!--[if IE]>
-        <style>
-            p, ol, ul{
-                width: 100%;
-            }
-            blockquote{
-                width: 100%;
-            }
-        </style>
-    <![endif]-->
-
-    {% include head.html %}
-
+{%- include head.html -%}
 </head>
-<body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %}">
+<body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %} h-100">
+{%- include google_js.html -%}
 
-    <div class="site-wrapper">
-        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        {{ content }}
+<nav id="primary-nav" class="navbar navbar-dark navbar-expand-lg">
+<div class="container">
+<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link active disabled" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#">Services</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#">Portfolio</a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" href="#">Blog</a>
+</li>
 
-        <!-- Previous/next page links - displayed on every page -->
-        {% if paginator.total_posts > site.paginate %}
-            {% if page.class == 'home-template' %}
-                {% include post_pagination.html %}
-            {% elsif page.class == 'page-template' %}
-                {% include post_pagination.html %}
-            {% elsif page.class == 'author-template' %}
-                {% include author_pagination.html %}
-            {% elsif page.class == 'tag-template' %}
-                {% include tag_pagination.html %}
-            {% else %}
-                {% include post_pagination.html %}
-            {% endif %}
-        {% endif %}
+<li class="nav-item">
+<a class="nav-link disabled" href="#">Contact</a>
+</li>
+</ul>
+</div>
+<ul class="navbar-nav flex-row ml-md-auto d-md-flex d-sm-none">
+<li class="nav-item dropdown">
+<li class="nav-item">
+<a class="nav-link p-2" href="https://ryanchoi.slack.com/" target="_blank" rel="noopener" aria-label="Slack"><svg xmlns="http://www.w3.org/2000/svg" class="navbar-nav-svg" viewBox="0 0 512 512" role="img" focusable="false"><title>Slack</title><path fill="currentColor" d="M210.787 234.832l68.31-22.883 22.1 65.977-68.309 22.882z"></path><path fill="currentColor" d="M490.54 185.6C437.7 9.59 361.6-31.34 185.6 21.46S-31.3 150.4 21.46 326.4 150.4 543.3 326.4 490.54 543.34 361.6 490.54 185.6zM401.7 299.8l-33.15 11.05 11.46 34.38c4.5 13.92-2.87 29.06-16.78 33.56-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18l-11.46-34.38-68.36 22.92 11.46 34.38c4.5 13.92-2.87 29.06-16.78 33.56-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18l-11.46-34.43-33.15 11.05c-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18c-4.5-13.92 2.87-29.06 16.78-33.56l33.12-11.03-22.1-65.9-33.15 11.05c-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18c-4.48-13.93 2.89-29.07 16.81-33.58l33.15-11.05-11.46-34.38c-4.5-13.92 2.87-29.06 16.78-33.56s29.06 2.87 33.56 16.78l11.46 34.38 68.36-22.92-11.46-34.38c-4.5-13.92 2.87-29.06 16.78-33.56s29.06 2.87 33.56 16.78l11.47 34.42 33.15-11.05c13.92-4.5 29.06 2.87 33.56 16.78s-2.87 29.06-16.78 33.56L329.7 194.6l22.1 65.9 33.15-11.05c13.92-4.5 29.06 2.87 33.56 16.78s-2.88 29.07-16.81 33.57z"></path></svg></a>
+</li>
+</ul>
+</div>
+</nav>
 
-        <!-- The footer at the very bottom of the screen -->
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright">Ryan Choi &copy; {{  site.time | date: '%Y' }}</section>
-            </div>
-        </footer>
+{{ content }}
 
-    </div>
+<div class="container text-center text-muted fixed-bottom alert alert-info alert-dismissible fade show" role="alert">
+<small>This website will officially launch on 2019-08-01!</small>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
 
-    {% if paginator.total_pages > site.paginate %}
-    <script>
-        var maxPages = parseInt('{{ paginator.total_pages }}');
-    </script>
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script>
-    {% endif %}
+<footer class="text-muted border-top">
+<div class="container p-3 p-md-5 text-center">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30300113.65205734!2d-96.8177377!3d62.3853313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1264dca051716884!2sSEO+Soul!5e0!3m2!1sen!2sca!4v1563710542687!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<div class="border-top pt-4 p-3 text-center">
+<img src="/assets/images/logo.png"/>
+<ul class="nav mt-2 justify-content-center">
+<li class="nav-item">
+<a class="nav-link" href="{{ % site.url % }}/about/legal/"><small>Privacy & Legal</small></a>
+</li>
+</ul>
+<p><small>Created with love, <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>, and <a href="https://github.com/" target="_blank">GitHub</a>. <br/>Licensed <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>.</small></p>
+<ul class="navbar-nav flex-row ml-md-auto d-md-flex d-sm-none justify-content-center">
+<li class="nav-item dropdown">
+<li class="nav-item">
+<a class="nav-link p-2" href="https://ryanchoi.slack.com/" target="_blank" rel="noopener" aria-label="Slack"><svg xmlns="http://www.w3.org/2000/svg" class="navbar-nav-svg" viewBox="0 0 512 512" role="img" focusable="false"><title>Slack</title><path fill="currentColor" d="M210.787 234.832l68.31-22.883 22.1 65.977-68.309 22.882z"></path><path fill="currentColor" d="M490.54 185.6C437.7 9.59 361.6-31.34 185.6 21.46S-31.3 150.4 21.46 326.4 150.4 543.3 326.4 490.54 543.34 361.6 490.54 185.6zM401.7 299.8l-33.15 11.05 11.46 34.38c4.5 13.92-2.87 29.06-16.78 33.56-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18l-11.46-34.38-68.36 22.92 11.46 34.38c4.5 13.92-2.87 29.06-16.78 33.56-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18l-11.46-34.43-33.15 11.05c-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18c-4.5-13.92 2.87-29.06 16.78-33.56l33.12-11.03-22.1-65.9-33.15 11.05c-2.87.82-6.14 1.64-9 1.23a27.32 27.32 0 0 1-24.56-18c-4.48-13.93 2.89-29.07 16.81-33.58l33.15-11.05-11.46-34.38c-4.5-13.92 2.87-29.06 16.78-33.56s29.06 2.87 33.56 16.78l11.46 34.38 68.36-22.92-11.46-34.38c-4.5-13.92 2.87-29.06 16.78-33.56s29.06 2.87 33.56 16.78l11.47 34.42 33.15-11.05c13.92-4.5 29.06 2.87 33.56 16.78s-2.87 29.06-16.78 33.56L329.7 194.6l22.1 65.9 33.15-11.05c13.92-4.5 29.06 2.87 33.56 16.78s-2.88 29.07-16.81 33.57z"></path></svg></a>
+</li>
+</ul>
+
+</div>
+
+</footer>
+
+{%- include js.html -%}
 
 </body>
 </html>
