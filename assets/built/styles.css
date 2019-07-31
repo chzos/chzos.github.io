@@ -1,8 +1,17 @@
 #asd {
-  height: calc(100% - 57px);
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  height: calc(100% - 55px);
+  background-color: black;
+  background-image: url("/assets/images/background.jpg"); /* The image used */
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#title {
+  color: #3e485c;
+
+  font-weight: 300;
+  font-size: 50px;
 }
 
 #credits {
@@ -34,4 +43,16 @@
 
 .h-100 {
   min-height:100%;
+}
+
+.text-custom {
+  color: #3e485c;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px #000000;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  font-family: "Source Sans Pro", sans-serif;
 }

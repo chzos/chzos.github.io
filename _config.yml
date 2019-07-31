@@ -1,8 +1,9 @@
 # Jekyll configuration
+encoding: 'utf-8'
+language: 'en-ca'
 markdown: kramdown
 highlighter: rouge
 paginate: 100 # it will paginate after this number
-language: 'en-ca'
 baseurl: /
 # Website info
 title: Ryan Choi
@@ -13,9 +14,11 @@ logo_dark: assets/images/favicon.ico
 favicon: assets/images/favicon.ico
 # Social info
 navigation: True # show the navbar links
-subscribers: True # you need to connect an external service for this to work,
+subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
+collections:
+  - portfolio
 twitter: tryghost # replace by your username
 facebook: ghost # replace by your username
 # Disqus
@@ -51,5 +54,3 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
-
-relative_permalinks: false
