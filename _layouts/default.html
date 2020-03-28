@@ -6,7 +6,39 @@
 <body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %} h-100">
 {%- include google_js.html -%}
 
-{%- include navigation.html -%}
+<!-- Header -->
+<div class="navik-header header-shadow">
+  <div class="container">
+
+    <!-- Navik header -->
+    <div class="navik-header-container">
+
+      <!--Logo-->
+              <div class="logo" data-mobile-logo="demo/images/logo-dark.png" data-sticky-logo="demo/images/logo-dark.png">
+                <a href="#"><img src="demo/images/logo-dark.png" alt="logo"/></a>
+      </div>
+
+      <!-- Burger menu -->
+      <div class="burger-menu">
+        <div class="line-menu line-half first-line"></div>
+        <div class="line-menu"></div>
+        <div class="line-menu line-half last-line"></div>
+      </div>
+
+      <!--Navigation menu-->
+              <nav class="navik-menu menu-caret submenu-top-border submenu-scale">
+                <ul>
+                  <li class="scroll-to"><a href="/">Home</a></li>
+                  <li class="scroll-to"><a href="/portfolio">Portfolio</a></li>
+                  <li class="scroll-to"><a href="/blog">Blog</a></li>
+                  <li class="scroll-to"><a href="/contact">Contact</a></li>
+                  </ul>
+              </nav>
+
+    </div>
+
+  </div>
+</div>
 
 {{ content }}
 

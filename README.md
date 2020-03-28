@@ -1,6 +1,9 @@
-## Site Branding
-Typography:
-Colours:
+## Typography
+Fira sans (400; 15px) for menus
+Source Sans Pro (400 weight; 16px) for content
+Source Sans Pro (500; 32px) for call-outs and hero content.
+
+# Colour Design
 
 ## Jekyll
 When coding with liquid syntax, whitespace control tends to be an issue; therefore all liquid syntax should appear immediately after html tags, without newlines or whitespace.

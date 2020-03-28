@@ -103,8 +103,8 @@
 }
 
 #asd {
-  height: calc(100% - 55px);
-  background-color: #0a0a0a;
+  height: 101%;
+	background: url('/assets/images/gray-and-white-electronic-keyboard-3532803.jpg') center no-repeat;
 }
 
 #title {
@@ -192,4 +192,8 @@ h1,h2,h3,h4,h5,h6,p {
 #button.show {
   opacity: 1;
   visibility: visible;
+}
+
+a:hover {
+	text-decoration:underline!important;
 }
