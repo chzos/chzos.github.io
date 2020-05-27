@@ -2,15 +2,6 @@
   height: 100%;
 }
 
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
-}
-
 #credits {
   left: auto;
   width: 20%;
@@ -46,4 +37,17 @@
 
 .h-100 {
   min-height:100%;
+}
+
+/* FOOTER STYLES */
+footer {
+background-color: #2e3c56;
+}
+
+footer > a {
+color:#eee;
+}
+
+footer > a:hover {
+color:#fff;
 }
