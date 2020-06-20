@@ -1,18 +1,33 @@
-<nav id="primary-nav" class="navbar navbar-dark navbar-expand-lg">
+<!-- Header -->
+<div class="navik-header header-transparent">
 <div class="container">
-<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-<ul class="navbar-nav mr-auto">
-{% for item in site.data.navigation %}
-<li class="nav-item">
-<a href="{{ item.link }}" {% if page.url == item.link %}class="nav-link active disabled"{% endif %} class="nav-link">
-{{ item.name }}
-</a>
-</li>
-{% endfor %}
+
+<!-- Navik header -->
+<div class="navik-header-container">
+
+<!--Logo-->
+<div class="logo" data-mobile-logo="/assets/images/logo.png" data-sticky-logo="/assets/images/logo.png">
+<a href="#">Ryan<br>Choi</a>
+</div>
+
+<!-- Burger menu -->
+<div class="burger-menu">
+<div class="line-menu line-half first-line"></div>
+<div class="line-menu"></div>
+<div class="line-menu line-half last-line"></div>
+</div>
+
+<!--Navigation menu-->
+<nav class="navik-menu separate-line submenu-top-border submenu-scale">
+<ul>
+<li class="scroll-to"><a href="/">Home</a></li>
+<li class="scroll-to"><a class="disabled" href="">Portfolio</a></li>
+<li class="scroll-to"><a href="/blog">Blog</a></li>
+<li class="scroll-to"><a href="/contact">Contact</a></li>
 </ul>
-</div>
-</div>
 </nav>
+
+</div>
+
+</div>
+</div>

@@ -1,10 +1,110 @@
+.divider {
+	position: relative;
+	width: 100%;
+	height: 5px;
+	margin: 0 0 30px;
+}
+
+.section-features .divider {
+	margin: 0 0 80px;
+}
+
+.section-demo .divider,
+.section-hover-transitions .divider,
+.section-dropdown-menu .divider {
+	margin: 0 0 40px;
+}
+
+.divider span {
+	display: block;
+	width: 86px;
+	height: 5px;
+	margin: auto;
+	opacity: 0.25;
+	background: url(images/divider-style8-black.png) no-repeat;
+}
+
+.divider:before,
+.divider:after {
+	position: absolute;
+	content: '';
+	top: 2px;
+	width: calc(50% - 50px);
+	height: 1px;
+	background-color: #e9e9e9;
+}
+
+.divider.divider-hidden-line:before,
+.divider.divider-hidden-line:after {
+	display: none !important;
+}
+
+.divider:before {
+	left: 0;
+}
+
+.divider:after {
+	right: 0;
+}
+
+.divider.divider-left span {
+	margin: 0;
+	float: left;
+}
+
+.divider.divider-right span {
+	margin: 0;
+	float: right;
+}
+
+.divider.divider-left:before,
+.divider.divider-right:before {
+	display: none;
+}
+
+.divider.divider-left:after,
+.divider.divider-right:after {
+	width: calc(100% - 93px);
+}
+
+.divider.divider-right:after {
+	right: inherit;
+	left: 0;
+}
+
+.divider.divider-light-color span {
+	opacity: 0.34;
+	background: url('/assets/images/divider-style8-black.png') no-repeat;
+}
+
+.divider.divider-light-color:before,
+.divider.divider-light-color:after {
+	background-color: rgba(33,33,33,0.12);
+}
+
+.divider.divider-dark-color span {
+	opacity: 1;
+	background: url('/assets/images/divider-style8-white.png') no-repeat;
+}
+
+.divider.divider-dark-color:before,
+.divider.divider-dark-color:after {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.divider.divider-dark span {
+	opacity: 0.7;
+	background: url('/assets/images/divider-style8-white.png') no-repeat;
+}
+
+.divider.divider-dark:before,
+.divider.divider-dark:after {
+	background-color: #5e5e5e;
+}
+
 #asd {
-  height: calc(100% - 55px);
-  background-color: black;
-  background-image: url("/assets/images/background.jpg"); /* The image used */
-background-position: center; /* Center the image */
-background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover; /* Resize the background image to cover the entire container */
+  height: 101%;
+	background: url('/assets/images/gray-and-white-electronic-keyboard-3532803.jpg') center no-repeat;
 }
 
 #title {
@@ -55,4 +155,56 @@ background-size: cover; /* Resize the background image to cover the entire conta
 
 h1,h2,h3,h4,h5,h6,p {
   font-family: "Source Sans Pro", sans-serif;
+}
+
+/* BUTTON STYLES
+background-image: background: -webkit-linear-gradient(#a8d044, #95bb38 60%, #95bb38 90%, #94b83a);
+background-image: background: -o-linear-gradient(#a8d044, #95bb38 60%, #95bb38 90%, #94b83a);
+background-image: background: linear-gradient(#a8d044, #95bb38 60%, #95bb38 90%, #94b83a);
+    box-shadow: inset 0 1px 0 hsla(0,0%,100%,.1);
+*/
+
+/* FOOTER STYLES */
+
+footer {
+background-color: #2e3c56;
+color: #fff;
+}
+
+/* BACK TO TOP BUTTON */
+#goto-top {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#goto-top::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#goto-top:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#goto-top:active {
+  background-color: #555;
+}
+#goto-top.show {
+  opacity: 1;
+  visibility: visible;
 }
