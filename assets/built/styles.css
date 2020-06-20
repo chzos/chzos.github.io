@@ -157,10 +157,6 @@ h1,h2,h3,h4,h5,h6,p {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-a:hover {
-	text-decoration:underline!important;
-}
-
 /* BUTTON STYLES
 background-image: background: -webkit-linear-gradient(#a8d044, #95bb38 60%, #95bb38 90%, #94b83a);
 background-image: background: -o-linear-gradient(#a8d044, #95bb38 60%, #95bb38 90%, #94b83a);

@@ -3,6 +3,12 @@ Fira sans (400; 15px) for menus
 Source Sans Pro (400 weight; 16px) for content
 Source Sans Pro (500; 32px) for call-outs and hero content.
 
+Bebas Neue
+Rubik
+Oxygen
+Hind Siliguri
+
+
 # Colour Design
 
 ## Jekyll
