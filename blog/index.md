@@ -1,7 +1,6 @@
 ---
 layout: page
 navigation: true
-logo: 'assets/images/blog-icon-dark.png'
 current: blog
 ---
 <h1>Blog Posts</h1>
