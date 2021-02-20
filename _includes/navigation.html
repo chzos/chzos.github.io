@@ -1,18 +1,12 @@
-<nav id="primary-nav" class="navbar navbar-dark navbar-expand-lg">
-<div class="container">
-<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-<ul class="navbar-nav mr-auto">
-{% for item in site.data.navigation %}
-<li class="nav-item">
-<a href="{{ item.link }}" {% if page.url == item.link %}class="nav-link active disabled"{% endif %} class="nav-link">
-{{ item.name }}
-</a>
-</li>
-{% endfor %}
-</ul>
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home {% if page.current == 'home' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}">Home</a></li>
+        <li class="nav-about {% if page.current == 'about' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}blog">Blog</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
 </div>
-</div>
-</nav>
+<span class="nav-cover"></span>
