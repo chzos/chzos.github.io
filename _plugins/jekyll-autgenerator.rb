@@ -5,9 +5,8 @@ module Jekyll
     safe true
 
     def generate(site)
-      site.data['authors'].each do |author, data|
-        posts = [author, posts_by_author(site, author)]
-        build_subpages(site, 'author', posts)
+      site.categories.each do |author|
+        build_subpages(site, "author", author)
       end
     end
 
@@ -37,12 +36,6 @@ module Jekyll
 
       end
     end
-
-    private
-
-    def posts_by_author(site, author)
-      site.posts.docs.select { |post| post.data['author'] == author }
-    end
   end
 
   class GroupSubPageAuthor < Page
@@ -64,10 +57,10 @@ module Jekyll
       @site = site
       @base = base
       @dir = dir
-      @name = 'feed.xml'
+      @name = 'rss.xml'
 
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), "feed.xml")
+      self.read_yaml(File.join(base, '_layouts'), "author.xml")
       self.data[type] = val
       self.data["grouptype"] = type
       self.data["posts"] = posts[0..9]
