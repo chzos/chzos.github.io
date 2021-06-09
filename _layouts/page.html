@@ -1,36 +1,102 @@
----
-layout: default
-class: 'page-template'
----
-<!-- < default -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<!-- This is a page template. A page outputs content just like any other post, and has all the same -->
-    <!-- attributes by default, but you can also customise it to behave differently if you prefer.  -->
+    <!-- Page Meta -->
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
-<!-- Everything inside the #post tags pulls data from the page -->
-<!-- #post -->
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl }}{{ page.cover }}){% else %}no-cover{% endif %}">
-    <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
-        {% if page.logo %}<a class="blog-logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
-        {% if page.navigation %}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {% endif %}
-    </nav>
-</header>
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}assets/images/favicon.png" >
 
-<main class="content" role="main">
-    <article class="post">
-        <!-- Everything inside the #post tags pulls data from the post -->
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/syntax.css" />
 
-        <header class="post-header">
-            <h1 class="post-title">{{ page.title }}</h1>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+    {% include head.html %}
+
+</head>
+<body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %} nav-closed">
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3CKCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- The blog navigation links -->
+    {% include navigation.html %}
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- Everything inside the #post tags pulls data from the page -->
+        <!-- #post -->
+
+        <header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl }}{{ page.cover }}){% else %}no-cover{% endif %}">
+            <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
+                {% if page.logo %}<a class="blog-logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
+                {% if page.navigation %}
+                    <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+                {% endif %}
+            </nav>
         </header>
 
-        <section class="post-content">
-            {{ content }}
-        </section>
+        <main class="content" role="main">
+            <article class="post">
+                <!-- Everything inside the #post tags pulls data from the post -->
 
-    </article>
-</main>
-<!-- /post -->
+                <header class="post-header">
+                    <h1 class="post-title">{{ page.title }}</h1>
+                </header>
+
+                <section class="post-content">
+                    {{ content }}
+                </section>
+
+            </article>
+        </main>
+        <!-- /post -->
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="https://www.iubenda.com/privacy-policy/68560007" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+            <style>
+            .iubenda-ibadge {
+              margin: 0!important;
+            }
+            </style>
+            </section>
+          <section class="poweredby"><a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; {{  site.time | date: '%Y' }}</a>
+          </section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!-- {{ghost_foot}} -->
+    <!-- Add Google Analytics  -->
+    {% include analytics.html %}
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/index.js"></script>
+
+</body>
+</html>
