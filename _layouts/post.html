@@ -31,7 +31,7 @@ class: 'post-template'
 
             {% for author in site.data.authors %}
                 {% if author[1].username == page.author %}
-                    <a href='/author/{{ page.author }}'>{{ author[1].name }}</a>
+                    {{ author[1].name }}
                 {% endif %}
             {% endfor %}
             <time class="post-date" datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date_to_string }}</time>
@@ -63,7 +63,7 @@ class: 'post-template'
                 {% if author[1].username == page.author %}
                     {% if author[1].assets %}
                         <figure class="author-image">
-                            <a class="img" href="/author/{{ page.author }}" style="background-image: url(/{{ author[1].assets }})"><span class="hidden">{{ page.author }}'s Picture</span></a>
+                            <span class="hidden">{{ page.author }}'s Picture</span>
                         </figure>
                     {% endif %}
 
@@ -85,17 +85,13 @@ class: 'post-template'
 
                     <section class="share">
                         <h4>Share this post</h4>
-                        <a class="icon-twitter" href="http://twitter.com/share?text={{ page.title }}&amp;url=/{{ page.url | remove: '/' }}"
+                        <a class="icon-twitter" href="http://twitter.com/share?text={{ page.title }}&amp;url=https://ryanchoi.ca{{ page.url }}"
                             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                             <span class="hidden">Twitter</span>
                         </a>
-                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=/{{ page.url | remove: '/' }}"
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ryanchoi.ca{{ page.url }}"
                             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                             <span class="hidden">Facebook</span>
-                        </a>
-                        <a class="icon-google-plus" href="https://plus.google.com/share?url=/{{ page.url | remove: '/' }}"
-                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                            <span class="hidden">Google+</span>
                         </a>
                     </section>
                 {% endif %}
