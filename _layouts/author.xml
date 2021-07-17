@@ -10,7 +10,7 @@ title: nil
 	  <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
 	  <guid>{{ site.baseurl }}{{ post.url }}</guid>
 	  <description><![CDATA[
-	     {{ post.content | expand_urls : site.url }}
+	     {{ post.content | expand_urls : site.baseurl }}
 	  ]]></description>
 	</item>
 {% endfor %}
