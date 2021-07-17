@@ -63,7 +63,7 @@ class: 'post-template'
                 {% if author[1].username == page.author %}
                     {% if author[1].assets %}
                         <figure class="author-image">
-                            <span class="hidden">{{ page.author }}'s Picture</span>
+                            <span class="img" style="background-image: url(/{{ author[1].assets }})"><span class="hidden">{{ page.author }}'s Picture</span></span>
                         </figure>
                     {% endif %}
 
