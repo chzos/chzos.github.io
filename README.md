@@ -1,61 +1,28 @@
-<<<<<<< HEAD
-## Typography
+# Kaliedo Theme
+A work-in-progress theme for my personal websites that emphasize visual aspects such as posts, and portfolio sections above more corporate-centric websites that emphasize text content, and navigation.
+
+The primary usage case for this theme is in conjunction with GitHub Pages and will align with the documentation for GitHub pages.
+
+https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
+
+This theme aims to incorporate aspects of accessibility, and SEO while still remaining visually appealing and minimalistic.
+
+Based upon the Jasper themes re-developed for Jekyll, originally the default themes for the Ghost CMS created by John Nolan.
+
+## Style Guide
 Fira sans (400; 15px) for menus
 Source Sans Pro (400 weight; 16px) for content
 Source Sans Pro (500; 32px) for call-outs and hero content.
-
 Bebas Neue
 Rubik
 Oxygen
 Hind Siliguri
 
-
 # Colour Design
-
-## Jekyll
-When coding with liquid syntax, whitespace control tends to be an issue; therefore all liquid syntax should appear immediately after html tags, without newlines or whitespace.
-=======
-## Jasper
->>>>>>> ghost
-
-[![Build Status](https://travis-ci.org/jekyller/jasper.svg?branch=master)](https://travis-ci.org/jekyller/jasper)
-[![Ruby](https://img.shields.io/badge/ruby-2.5.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper)
-[![Jekyll](https://img.shields.io/badge/jekyll-3.6.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper)
-
-This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll inspired by [Kasper](https://github.com/rosario/kasper).
-
-You might well ask at this point why bother making a new Casper's clone?
-Although this is inspired by Kasper, there are several **additional** features which make this port closer
-to the original theme. This port is based on the last Casper v1.3.7 (same as v1.4.0 that runs in Ghost 1.0).
-
-**New:** Check out **[Jasper2](https://github.com/jekyller/jasper2)**, a new port of Casper version 2!
 
 ## Live demo
 
-[Jasper Live Demo](https://jekyller.github.io/jasper)
-
-[Casper's Original Here](https://demo.ghost.io)
-
-
 ## Screenshots
-
-**Home page**
-![home page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen1.png)
-
-**Post page**
-![post page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen2.png)
-
-**Author page**
-![author page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen3.png)
-
-**Related posts page**
-![tag page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen4.png)
-
-**Tags page with opened sidebar**
-![sidebar page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen5.png)
-
-**404 page**
-![related page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen6.png)
 
 ## Jasper theme includes
 
@@ -90,22 +57,19 @@ For option **1)** simply clone this repository (*master branch*), and then run `
 
 For option **2)** you will need to set up travis-ci for your personal fork. Briefly all you need then is to change your details in *[\_config.yml](_config.yml)* so that you can push to your github repo. You will also need to generate a secure key to add to your *[.travis.yml](.travis.yml)* (you can find more info on how to do it in that file). Also make sure you read the documentation from [jekyll-travis](https://github.com/mfenner/jekyll-travis). This approach has clear advantages in that you simply push changes to your files and all the html files are generated for you. Also you get to know if everything is still fine with your site builds. Don't hesitate to contact me if you still have any issues (see below about issue tracking).
 
-### Author pages
-
-In order to properly generate author pages you need to rename the field *categories* in the front matter of every post to match that of your each author *username* as defined in the *[\_config.yml](_config.yml)* file.
-With the latest update, multiple author blogs are now supported out of the box.
-
 ## Issues and contributing
 
 This install builds well with Ruby v2.4.2 and Jekyll v3.7.4. If you run into any problems please log them on the [issue tracker](https://github.com/jekyller/jasper/issues).
 
 Feel free pull-request your patches and fixes.
 
-## Thanks
-
-
-Many thanks to the Ghost team for all the design work that allows to make this clone possible. Also many thanks to all contributors, that help keeping the project alive and updated :smile:
-
+## Dependencies
+[![Ruby](https://img.shields.io/badge/ruby-3.1.1-blue.svg?style=flat)](https://www.ruby-lang.org/)
+[![Jekyll](https://img.shields.io/badge/jekyll-3.9.2-brightgreen.svg?style=flat)](https://github.com/jekyll/jekyll/releases)
+GitHub Pages
+Rake
+Nokogiri
+Webrick
 
 ## Copyright & License
 

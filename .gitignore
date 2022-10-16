@@ -1,5 +1,8 @@
+# macOS files
 .DS_Store
-Gemfile.lock
-package-lock.json
-node_modules/
+
+# IDE files
+.idea/
+
+# Jekyll static site files
 _site/

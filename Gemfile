@@ -1,6 +1,16 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "jekyll", "~> 3.8.7"
-gem "github-pages", "~> 206"
-gem "rake", ">= 13.0.3"
-gem "nokogiri", ">= 1.11.7"
+source "https://rubygems.org"
+gemspec
+
+ruby '3.1.1'
+
+gem "jekyll", "~> 3.9.2"
+gem "webrick"
+
+group :jekyll_plugins do
+  gem 'jekyll-paginate'
+  gem 'kramdown-parser-gfm', '>= 1.1.0'
+  gem 'jekyll-sitemap'
+  gem 'jekyll-feed'
+end
